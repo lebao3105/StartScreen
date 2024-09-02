@@ -147,6 +147,7 @@ namespace StartScreen
                 MainWindow.Instance.alreadyShowing = false;
                 Thread.Sleep(100);
                 MainWindow.Instance.HideWindow();
+                Environment.Exit(0); //by oliik2013
             }
             catch
             {
