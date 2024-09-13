@@ -11,6 +11,7 @@ on:
     paths:
       - StartScreen*
       - .github
+  workflow_dispatch:
 
 jobs:
 
