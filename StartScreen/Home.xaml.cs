@@ -15,12 +15,10 @@ namespace StartScreen
     /// </summary>
     public partial class Home : Page
     {
-        public static Home Instance;
         TileBackend tile = new TileBackend();
 
         public Home()
         {
-            Instance = this;
             InitializeComponent();
 
             tile.initDefaultTiles();

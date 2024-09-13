@@ -23,7 +23,6 @@ namespace StartScreen
     /// </summary>
     public partial class StartGroup : UserControl
     {
-
         private readonly List<TileBackend.tileData> tiles;
 
         public StartGroup(string groupName, List<TileBackend.tileData> tiles)
@@ -78,16 +77,15 @@ namespace StartScreen
 
                 if (item.name == "startScreen[specialTiles(desktop)];")
                 {
-                    var bck = new ImageBrush(Utils.BitmapFromUri(new Uri(Utils.getWallpaperPath())))
-                    {
-                        Stretch = Stretch.UniformToFill
-                    };
                     tile = new Tile
                     {
                         Content = "Desktop",
                         HorizontalContentAlignment = HorizontalAlignment.Left,
                         VerticalContentAlignment = VerticalAlignment.Bottom,
-                        Background = bck,
+                        Background = new ImageBrush(Utils.BitmapFromUri(new Uri(Utils.getWallpaperPath())))
+                        {
+                            Stretch = Stretch.UniformToFill
+                        },
                         Style = tileStyle
                     };
                     tile.Click += hideDesktopTile_Click;

@@ -8,7 +8,6 @@ using System.Windows.Interop;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Media.Animation;
-using System.Diagnostics.Metrics;
 using System.Windows.Threading;
 using System.Reflection;
 using System.Windows.Media;
@@ -33,8 +32,8 @@ namespace StartScreen
         //[DllImport("user32.dll", CharSet = CharSet.Auto)]
         //public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, uint lParam);
 
-        public DispatcherTimer counter2 = new();
-        DispatcherTimer counter = new();
+        public DispatcherTimer counter2 = new DispatcherTimer();
+        DispatcherTimer counter = new DispatcherTimer();
 
         /// Is the window initialized?
         private bool initialized = false;
@@ -133,8 +132,8 @@ namespace StartScreen
                 allApps = new AllApps();
             }
         }
-        public List<TileBackend.tileData> appList = new();
-        public List<TileBackend.tileData> appListNameFriendly = new();
+        public List<TileBackend.tileData> appList = new List<TileBackend.tileData>();
+        public List<TileBackend.tileData> appListNameFriendly = new List<TileBackend.tileData>();
 
         public bool alreadyShowing = false;
 
@@ -181,7 +180,7 @@ namespace StartScreen
         private void mainWindow_KeyUp(object sender, KeyEventArgs e)
         {
             if ((e.Key == Key.LWin || e.Key == Key.RWin) &&
-                (e.Key.ToString().Contains("|"))) // <- '|' operator
+                !e.Key.ToString().Contains("|")) // <- '|' operator
             {
                 Environment.Exit(0);
             }

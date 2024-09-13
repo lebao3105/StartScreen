@@ -18,11 +18,11 @@
                            HorizontalContentAlignment="Left" FontSize="30"
                            VerticalContentAlignment="Center" Margin="0,-11,10,10"
                            x:Name="GroupName"/>
-                    
+
                     <Label Content="&#xE26B;" IsHitTestVisible="False" FontSize="30"
                            VerticalContentAlignment="Center" FontFamily="Segoe UI Symbol"
                            Foreground="White" Background="Transparent" Margin="0,-11,0,10"/>
-                    
+
                 </StackPanel>
             </Button>
         </ListBoxItem>

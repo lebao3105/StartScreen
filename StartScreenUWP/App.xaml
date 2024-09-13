@@ -1,0 +1,8 @@
+﻿<xaml:XamlApplication
+    x:Class="StartScreenUWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StartScreenUWP"
+    xmlns:xaml="using:Microsoft.Toolkit.Win32.UI.XamlHost">
+
+</xaml:XamlApplication>

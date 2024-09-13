@@ -10,7 +10,7 @@ namespace StartScreen
 {
     public sealed class TileBackend
     {
-        public Dictionary<string, List<tileData>> data = new();
+        public Dictionary<string, List<tileData>> data = new Dictionary<string, List<tileData>>();
 
         public void saveTile()
         {
@@ -24,7 +24,7 @@ namespace StartScreen
 
         public void getTile(tileData tileData)
         {
-        
+
         }
 
         public void initDefaultTiles()
@@ -32,7 +32,7 @@ namespace StartScreen
             Logger.info("Initializing Default Tiles");
             data.Add(
                 "Default",
-                [
+                new List<tileData> {
                     new tileData
                     {
                         Size = tileSize.wide,
@@ -41,11 +41,11 @@ namespace StartScreen
                         tilePosX = 0, tilePosY = 0,
                         group = "Default"
                     },
-                ]
+                }
             );
             data.Add(
                 "Internet",
-                [
+                new List<tileData> {
                     new tileData
                     {
                         Size = tileSize.wide,
@@ -54,7 +54,7 @@ namespace StartScreen
                         tilePosX = 0, tilePosY = 0,
                         group = "Internet"
                     }
-                ]
+                }
             );
         }
 
@@ -62,9 +62,9 @@ namespace StartScreen
         public class tileData
         {
             public tileSize Size { get; set; }
-            
+
             public string name { get; set; }
-            
+
             public string programPath { get; set; }
             public int tilePosX { get; set; }
 
@@ -74,7 +74,7 @@ namespace StartScreen
 
             public BitmapSource appIcon { get; set; }
         }
-        
+
         // Tile size struct
         public enum tileSize
         {
